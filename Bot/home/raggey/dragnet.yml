@@ -1,0 +1,32 @@
+# Before you begin, you should copy and rename this file, as it's an example file that won't be used by the server.
+# You can do this by running the following command:
+#
+#     cp dragnet-example.yml dragnet.yml
+#
+# Once copied, edit the dragnet.yml file.
+
+# Replace This with the discord webhook for your channel
+discordWebhookUrl: https://discordapp.com/api/webhooks/444019972729995264/Bn8grsfhTXEL47AUUqWRpfat82wVWRnDHe7p7qK9zD7MEq5ZRtQv3-KyFTkRUxoWv4NC
+
+# Leave this as is, no one on Jabber will see this, it's there so discord people can get in touch with me if shit goes
+# sideways.
+discordUserAgent: Private Jabber -> Discord Relay (notarealtree @ GitHub)
+
+# This is the list of Servers. I've filled out blocks for the three jabbers you want (replace them with actual
+# credentials / addresses). You can add more by simple copy pasting one of the blocks below, make sure to keep the
+# indentation the same.
+servers:
+  - address: goonfleet.com
+    alias: Goon Jabber
+    username: durka_mcdurka
+    password: Durka2323
+
+# This block customises what happens when shit goes sideways and jabber server connections fail
+reconnectionStrategy:
+  # How much the time between retries is incremented. By default this is set to 20. This means that if a connection
+  # fails, we will retry after 20 seconds, then 40, then 60 etc...
+  increment: 20
+  # This customises how often there will be a ping notifying you that something is wrong with one of the server
+  # connections. At the first failure, and every n-failures afterwards, you'll be pinged with an error in the same
+  # channel.
+  pingIncrement: 5
